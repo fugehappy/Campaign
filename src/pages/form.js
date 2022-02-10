@@ -1,6 +1,7 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from '@/components/Form.vue'
 import VueI18n from 'vue-i18n'
+import '@/assets/script/login.js'
 import {
   Dialog,
   Uploader,

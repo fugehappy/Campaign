@@ -1,34 +1,11 @@
-<!DOCTYPE html>
-<html lang="">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-  <link rel="stylesheet" href="./globalCss/gobal.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.css">
-  <link href="https://cdn.bootcdn.net/ajax/libs/social-share-kit/1.0.9/css/social-share-kit.css" rel="stylesheet">
-  <script src="https://infinixmob.mez100.com.cn/fileadmin/assets/activity/20220123/scripts/social-share-kit.min.js"></script>
-  <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"> </script>
-  <!-- <script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script> -->
-  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
-  <title>
-    <%= htmlWebpackPlugin.options.title %>
-  </title>
-</head>
-
-<body>
-  <noscript>
-    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
-        Please enable it to continue.</strong>
-  </noscript>
-  <div id="g_login"></div>
-  <div id="app"></div>
-  <!-- built files will be auto injected -->
-</body>
-<script>
-
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if(d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 
 (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -53,7 +30,7 @@ function storageInfo(data) {
       expires: 7
   });
 
-  document.querySelector('#join').click();
+  location.href = "form"
 }
 
 function testAPI() {
@@ -110,30 +87,3 @@ function startGoogleApp() {
       console.log(JSON.stringify(error, undefined, 2));
   });
 }
-
-SocialShareKit.init({
-      selector: ".ssk-group .ssk",
-      url: window.location.href,
-      text: "Share text default",
-      twitter: {
-        url: "http://url-for-twitter",
-        text: "Share text for twitter",
-        via: "twitter-screen-name",
-        countCallback: function (shareUrl, onCountReady) {
-          // Get count somewhere manually and call onCountReady() whenever you got the count.
-          var count = 5;
-          return onCountReady(count);
-        },
-      },
-    });
-
-    window.fbAsyncInit = function () {
-      FB.init({
-        xfbml: true,
-        version: "v3.2",
-      });
-    };
-
-</script>
-
-</html>

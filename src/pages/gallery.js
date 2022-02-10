@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from '@/components/Gallery.vue'
 import VueI18n from 'vue-i18n'
 import {
   Dialog,
@@ -72,18 +72,13 @@ const messages = {
       formCity: "City",
       formCityTip: "*This field fill in.",
       formPicTitle: "Best Record",
-      formPicTip: "*Please upload a screenshoot of your best record with your ID in one picture",
       formUpload: "Click to Upload",
       formLink: "Video link upload",
-      formLinkTip: "*This field fill in.",
       formActivity: "Activity",
       formActivityTip: "*This field fill in.",
       formTextInput: "Text Input",
       formTextInputTip: "*This field fill in.",
       formSubmit: "Submit",
-      formSuccessTitle: "Congratulations!",
-      formSuccessCont: "You have completed the registration.",
-      formSuccessConfirm: "OK",
     }
   },
   ar: {
